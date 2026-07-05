@@ -1,0 +1,4 @@
+# Keep installers safe from Windows autocrlf: a CRLF install.sh breaks even in Git Bash.
+*.sh text eol=lf
+*.ps1 text eol=crlf
+*.md text eol=lf
