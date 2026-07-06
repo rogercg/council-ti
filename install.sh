@@ -1,14 +1,22 @@
 #!/usr/bin/env sh
 # Install The IT Council into a target repo, for your AI tool of choice.
-# Usage: ./install.sh <claude|kiro|cursor|copilot|agents-md> <target-repo-path>
+# Usage: ./install.sh <plugin|claude|kiro|cursor|copilot|agents-md> <target-repo-path>
 # Single source of truth: core/it-council.md — adapters only add each tool's frontmatter.
 set -e
 TOOL="$1"; DEST="$2"; HERE="$(cd "$(dirname "$0")" && pwd)"
 CORE="$HERE/core/it-council.md"
-[ -n "$TOOL" ] && [ -n "$DEST" ] || { echo "Usage: $0 <claude|kiro|cursor|copilot|agents-md> <target-repo-path>"; exit 1; }
+[ -n "$TOOL" ] && [ -n "$DEST" ] || { echo "Usage: $0 <plugin|claude|kiro|cursor|copilot|agents-md> <target-repo-path>"; exit 1; }
 [ -d "$DEST" ] || { echo "Target does not exist: $DEST"; exit 1; }
 
 case "$TOOL" in
+  plugin)
+    # Regenerate the Claude plugin's agent + skill from core/ (single source of truth).
+    # Run this after editing core/it-council.md, then commit. DEST is ignored (writes into this repo).
+    PDIR="$HERE/plugins/it-council"
+    mkdir -p "$PDIR/agents" "$PDIR/skills/it-council"
+    cat "$HERE/adapters/claude-agent.md" "$CORE" > "$PDIR/agents/it-council.md"
+    cat "$HERE/adapters/claude-skill.md" "$CORE" > "$PDIR/skills/it-council/SKILL.md"
+    echo "OK — plugin files regenerated from core/ (commit them for /plugin install to work)" ;;
   claude)
     mkdir -p "$DEST/.claude/agents" "$DEST/.claude/skills/it-council"
     cat "$HERE/adapters/claude-agent.md" "$CORE" > "$DEST/.claude/agents/it-council.md"

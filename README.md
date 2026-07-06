@@ -41,14 +41,23 @@ that could break production.
 
 ## Install
 
-```bash
-git clone https://github.com/<you>/council-ti.git && cd council-ti
+### Claude Code — one command (recommended)
 
-# pick your tool:
-./install.sh claude    /path/to/your/repo   # Claude Code  → /it-council
-./install.sh kiro      /path/to/your/repo   # Kiro         → #it-council
-./install.sh cursor    /path/to/your/repo   # Cursor       → @it-council
-./install.sh copilot   /path/to/your/repo   # Copilot      → /it-council
+```
+/plugin marketplace add rogercg/council-ti
+/plugin install it-council@council-ti
+```
+
+That's it — no clone, no scripts. Then use `/it-council` in any project.
+
+### Every other tool
+
+```bash
+git clone https://github.com/rogercg/council-ti.git && cd council-ti
+
+./install.sh kiro      /path/to/your/repo   # Kiro     → #it-council
+./install.sh cursor    /path/to/your/repo   # Cursor   → @it-council
+./install.sh copilot   /path/to/your/repo   # Copilot  → /it-council
 ./install.sh agents-md /path/to/your/repo   # Codex/Gemini/Zed via AGENTS.md
 ```
 

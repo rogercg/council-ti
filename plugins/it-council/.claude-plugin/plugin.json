@@ -1,0 +1,11 @@
+{
+  "name": "it-council",
+  "description": "The IT Council — a board of 6 AI specialists + a Lead/Chair that evaluates technical initiatives and returns a verdict, an impact/effort table, risks and ONE next action. Adds the /it-council skill and the it-council agent.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Roger Canchanya"
+  },
+  "homepage": "https://github.com/rogercg/council-ti",
+  "repository": "https://github.com/rogercg/council-ti",
+  "license": "MIT"
+}

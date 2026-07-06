@@ -1,0 +1,18 @@
+{
+  "name": "council-ti",
+  "owner": {
+    "name": "Roger Canchanya"
+  },
+  "description": "The IT Council — a board of 6 AI specialists + a Lead that stress-tests technical decisions before they ship.",
+  "plugins": [
+    {
+      "name": "it-council",
+      "source": "./plugins/it-council",
+      "description": "A board of 6 specialists (Skeptic, Senior, PO, Manager, QA, Custodian) + a Lead. Evaluates technical initiatives, plans, specs and changes across any stack; returns a verdict, an impact/effort table, risks and ONE next action.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Roger Canchanya"
+      }
+    }
+  ]
+}

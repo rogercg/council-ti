@@ -2,7 +2,7 @@
 # Usage: .\install.ps1 <claude|kiro|cursor|copilot|agents-md> <target-repo-path>
 # Single source of truth: core/it-council.md — adapters only add each tool's frontmatter.
 param(
-    [Parameter(Mandatory = $true)][ValidateSet("claude", "kiro", "cursor", "copilot", "agents-md")]
+    [Parameter(Mandatory = $true)][ValidateSet("plugin", "claude", "kiro", "cursor", "copilot", "agents-md")]
     [string]$Tool,
     [Parameter(Mandatory = $true)][string]$Dest
 )
